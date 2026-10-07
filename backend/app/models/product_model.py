@@ -7,7 +7,7 @@ class Product(SQLModel, table=True):
     name: str
     price: int
 
-# Schema input untuk request POST (tanpa ID)
+# Schema input untuk request POST (tanpa ID) - dengan validasi Pydantic via SQLModel
 class ProductCreate(SQLModel):
-    name: str
-    price: int
+    name: str = Field(min_length=1, max_length=100)
+    price: int = Field(ge=0)

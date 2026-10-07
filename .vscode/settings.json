@@ -1,0 +1,17 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/backend/venv/Scripts/python.exe",
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.envFile": "${workspaceFolder}/backend/.env",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/backend"
+    ],
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.dart_tool": true,
+        "**/build": true
+    },
+    "dart.flutterSdkPath": "C:\\tools\\flutter",
+    "dart.openDevTools": "flutter",
+    "flutter.additionalArgs": []
+}

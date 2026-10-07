@@ -1,0 +1,61 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "FastAPI Debug (Backend)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "app.main:app",
+                "--reload",
+                "--port",
+                "8000",
+                "--host",
+                "0.0.0.0"
+            ],
+            "jinja": true,
+            "justMyCode": true,
+            "cwd": "${workspaceFolder}/backend",
+            "console": "integratedTerminal",
+            "python": "${workspaceFolder}/backend/venv/Scripts/python.exe",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/backend"
+            }
+        },
+        {
+            "name": "Flutter Debug (Frontend)",
+            "type": "dart",
+            "request": "launch",
+            "preLaunchTask": "Start Backend (FastAPI)",
+            "cwd": "${workspaceFolder}/frontend/flutter_api_client",
+            "program": "${workspaceFolder}/frontend/flutter_api_client/lib/main.dart",
+            "flutterMode": "debug",
+            "deviceId": "all",
+            "console": "terminal",
+            "args": []
+        },
+        {
+            "name": "Python: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "python": "${workspaceFolder}/backend/venv/Scripts/python.exe",
+            "cwd": "${workspaceFolder}/backend",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/backend"
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Fullstack: Backend + Flutter",
+            "configurations": [
+                "FastAPI Debug (Backend)",
+                "Flutter Debug (Frontend)"
+            ],
+            "stopAll": true
+        }
+    ]
+}
